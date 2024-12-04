@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script type = "text/javascript" src = "level2.js">javascript</script>
+    <input type="button" onclick="myfun()" value="click me"> -->
+    <p id="boom">BOOM</p>
+    <p class="welcome">GUYS</p>
+    <p class="welcome">GUYS1</p>
+    <!-- Accessing element by ID -->
+    <script type="text/javascript">
+        var a = document.getElementsById("boom").innerHTML;
+        document.write(a );  // Adding <br> for line break
+    </script>
+
+    <!-- Accessing elements by class name -->
+    <script type="text/javascript">
+        var b = document.getElementsByClassName("welcome")[1].innerText;
+        document.write(b);
+    </script>
+
+    <!-- Accessing elements by tag name -->
+    <script type="text/javascript">
+        var tag = document.getElementsByTagName("p");
+        document.write(tag);
+    </script>
+
+    <!-- Accessing first elements by tag name -->
+    <script type="text/javascript">
+        var p = document.querySelector("p").innerHTML;
+        document.write(p);
+    </script>
+
+</body>
+</html>
+
