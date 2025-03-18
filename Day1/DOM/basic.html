@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1><span id="d">D:Document</span><span id="o">O:object</span></h1>
+    <span id="m">M:Modal</span> -->
+    <p id="thapa">Thapa</p>
+    <p class="welcome">money matters</p>
+    <!-- <img src="funds.jpg" alt="collect money">
+    <a href="https://google.com">google website</a> -->
+    <p class="welcome">Technical</p>
+    <p class="welcome">Technical2</p>
+    <p class="welcome">Technical3</p>
+    <script type="text/javascript">
+            var a  = document.getElementById("thapa").innerHTML;
+            document.write(a);
+            var b = document.getElementsByClassName("welcome")[0].innerHTML;
+            document.write(b);
+            var tag = document.getElementsByTagName("p");
+            document.write(tag);
+            console.log(tag);
+            //access first element
+            var p = document.querySelector('p').innerHTML;
+            document.write(p);
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="thapa">Thapa</p>
+    <p class="welcome">Technical</p>
+    <p class="welcome">Technical3</p>
+    <p class="welcome">Technical2</p><ul><li>Like</li>
+        <li>share</li>
+        <li>subscribe</li></ul>
+    <!-- access children of body -->
+     <script type="text/javascript">
+        console.log(document.children)
+        var child = document.body.children;
+        console.log(child);
+        //add a new child to the body => khud se
+        var para = document.createElement("p");
+        var textNode = document.createTextNode("nishu is wise");
+        para.appendChild(textNode);
+        console.log(para);
+        document.body.appendChild(para);
+
+        //access first and last child
+        var list = document.querySelector("ul");
+        console.log(list);
+        console.log(list.firstChild);
+        console.log(list.lastChild)
+        //sibling
+        console.log(list.previousSibling);
+        console.log(list.nextElementSibling);
+//adding new sibling
+        var newListItem = document.createElement("li");
+        newListItem.textContent="follow";
+        list.appendChild(newListItem);
+
+        console.log(newListItem)
+        console.log(list.lastChild);
+        //siblings
+
+        console.log("start new");
+        var allP = document.querySelectorAll("p");
+        console.log("all p element",allP);
+        console.log("Previous sibling of <ul>:", list.previousElementSibling); // Will be the last <p> (if any)
+        console.log("Next sibling of <ul>:", list.nextElementSibling); // Could be null or another element
+        var welcomePara = document.querySelector(".welcome");
+        console.log("Previous sibling of first .welcome paragraph:", welcomePara.previousElementSibling); // The <p> before it
+        console.log("Next sibling of first .welcome paragraph:", welcomePara.nextElementSibling); // The <p> after it
+
+
+     </script>
+</body>
+</html>

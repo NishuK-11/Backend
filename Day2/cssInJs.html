@@ -1,0 +1,26 @@
+<!-- one by one=> document.getElementByTd(id).style.property = new style
+all at once => the setAttribute() method adds a new attribute.
+  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="changecss">go ahead!!</h1>
+    <br>
+    <h2 id="changecssThapa">go ahead!!</h2>
+    <p id="newPara">hey everyone, it is necessary to earn a lots of money , for money read a lot.</p>
+    <p id="love">true love is something that can change your life  for ever</p>
+    <script type="text/javascript">
+        document.getElementById('changecss').style.color = 'red';
+        document.getElementById('changecssThapa').setAttribute("style",
+            "color:red; background-color:black;text-align:center;height:100px;"
+        )
+        document.getElementById('newPara').style.backgroundColor = 'pink';
+        document.getElementById('love').setAttribute("style","background-color:orange;color:black;padding:20px;border-radius:10px");
+    </script>
+</body>
+</html>
