@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para">Time:</p>
+    <button onclick="clearInterval(clock)">click to see time</button>
+    <script type="text/javascript">
+        var clock = setInterval(clocktiming,1000);//isko call karne ka jaroorat nhi hai, ye hote rhega
+        //infinite times chalte rhega 
+           
+        function clocktiming(){
+            var d = new Date();
+            var thpa = d.toLocaleTimeString();
+            // document.write(thpa);//continuously print karte rhega
+            var para = document.getElementById('para').innerHTML=thpa;
+            
+        }
+    </script>
+</body>
+</html>
