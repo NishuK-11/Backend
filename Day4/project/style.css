@@ -1,0 +1,88 @@
+/* Define Keyframes for the animations */
+
+/* bounceInLeft */
+@keyframes bounceInLeft {
+    0% {
+      transform: translateX(-300px);
+      opacity: 0;
+    }
+    60% {
+      transform: translateX(25px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  /* pulse */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* bounceIn */
+  @keyframes bounceIn {
+    0% {
+      transform: translateY(-300px);
+      opacity: 0;
+    }
+    60% {
+      transform: translateY(25px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* fadeInTopRight */
+  @keyframes fadeInTopRight {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px) translateX(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) translateX(0);
+    }
+  }
+  
+  /* Define the classes to be applied */
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+  .bounceInLeft {
+    animation-name: bounceInLeft;
+  }
+  
+  .pulse {
+    animation-name: pulse;
+  }
+  
+  .bounceIn {
+    animation-name: bounceIn;
+  }
+  
+  .fadeInTopRight {
+    animation-name: fadeInTopRight;
+  }
+  
+  /* Add transition for smooth scrolling effect */
+  .card {
+    transition: transform 1s ease, opacity 1s ease;
+  }
+  
+  

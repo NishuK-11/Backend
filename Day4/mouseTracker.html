@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // let mouseXstartpoint = 0;
+        // document.write(window.innerWidth);//current wala dega
+        // let mouseXendpoint = window.innerWidth;
+        // let currentXposition = 0;
+        // let fracXvalue = 0;
+        // const mouseMove = (event)=>{
+        //     // console.log(event);
+        //     console.log(`x value = ${event.clientX} & y value = ${event.clientY}`);
+        //     currentXposition = event.clientX;
+        //     fracXvalue = currentXposition/mouseXendpoint;
+        //     console.log(fracXvalue);
+        // }
+        // window.addEventListener('mousemove',mouseMove);
+
+        let mouseXstartpoint = 300;
+        document.write(window.innerWidth);//current wala dega
+        let mouseXendpoint = window.innerWidth;
+        let currentXposition = 0;
+        let fracXvalue = 0;
+
+        let mouseYendpoint = window.innerHeight;
+        let currentYposition = 0;
+        let fracYvalue = 0;
+
+        let mouseXrange = mouseXendpoint - mouseXstartpoint;
+        const mouseMove = (event)=>{
+            // console.log(event);
+            console.log(`x value = ${event.clientX} & y value = ${event.clientY}`);
+            currentXposition = event.clientX - mouseXstartpoint;
+            fracXvalue = currentXposition/mouseXrange;
+            console.log(fracXvalue);
+
+            currentYposition = event.clientY;
+            fracYvalue = currentYposition/mouseYendpoint;
+            console.log("Y"+fracYvalue);
+        }
+        window.addEventListener('mousemove',mouseMove);
+    </script>
+</body>
+</html>

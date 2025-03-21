@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Reverse the string in real time with decrementing for loop</h1>
+        <div class="input">
+            <input type="text" id="textInput" placeholder="enter your text">
+        </div>
+        <div class="output">
+            <p id="textOutput"></p>
+        </div>
+    </div>
+    
+    <script>
+        // Get the input element by id
+        var inputElement = document.getElementById('textInput');
+    
+        // Attach an event listener for input changes (on every keystroke)
+        inputElement.addEventListener('input', function() {
+            // Get the value of the input field in real time
+            var x = inputElement.value;
+            
+            // Log the value to the console (this will log as you type)
+            console.log(x);
+    
+            // You can also update the output here to show the reversed text
+            var reversed = x.split('').reverse().join('');
+            document.getElementById('textOutput').textContent = reversed;
+        });
+    </script>
+    
+</body>
+</html>

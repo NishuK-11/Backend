@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- scopechain in javascript 
+    the scope chain is simply the location where identifiers are declared that is searched to resolve the value of an identifier.
+    execution context refers to scopellexical scope means that in a nested group of functions, the inner functions have access to the variables and other resources of their parent scope. 
+     -->
+    <script>
+        
+     var x = 0;
+     var y = 'welocome';
+     console.log(x);
+     f1();
+     function f1(){
+         var localvarf1= 'subscribe';
+         var y2 = 'check here';
+         console.log(x);//0
+         f2();
+         function f2(){
+            var localvarf2 = 'like';
+            var y3 = 'share';
+            console.log(x);
+            f3();
+            function f3(){
+                var localvarf4 = 'comment';
+                var y4 = 'follow';
+                console.log(x);
+                console.log(y4);
+                console.log(y3);
+                console.log(y2);
+                console.log(y);
+            }
+         }
+    }
+    </script>
+</body>
+</html>
