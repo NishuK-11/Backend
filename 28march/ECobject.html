@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    1. creation phase:
+      . variable objects are created 
+      . scope chain is created
+        . this is created and assigned to the global object.
+
+    2. execution phase:
+      . code is executed line by line.
+      . function calls are pushed to the stack and popped out when they are done.
+
+    For each function (function declaration) a property is created in the variable object. which is pointing to that function. 
+    for each variable (variable declaration) a property is created in the variable object. which is pointing to undefined.
+    argument object are created that were passed into function. 
+</body>
+</html>

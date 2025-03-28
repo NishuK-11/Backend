@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- hoisting in javascript mechanism where variables and function declarations are moved to the top of their scope before the code execution. 
+     -->
+    <script>
+        
+        function sum(a, b) {
+            console.log(a + b);
+        }
+        sum(5, 6); // 11
+
+        //variable hoisting
+        // var a ;
+        // console.log(a); // undefined
+
+        console.log(a);  //undefined    // var a = undefined
+        var a ;              //console.log(a); // undefined
+        a=10;                //a=10;
+    </script>
+</body>
+</html>

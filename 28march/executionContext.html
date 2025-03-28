@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- javascript engine creates the global execution context before it starts to execute any code. 
+    variables and function that is not inside any function. a new execut
+ion context is created for each function call.
+the global execution context just like any other execution context , except that it gets created bt default. it is associated with global object. which means a window object.  -->
+ 
+<!-- Execution stack(calling stack)=> stack with LIFO structure,which is used to store all the execution context created during the code execution.  -->
+
+<script>
+
+    var globalLec = "added";
+    function a(){
+        var fa = "2nd function o/p1";
+        console.log(fa);
+        debugger;
+        b();
+        console.log("let the tears wipe out everything.");
+    }
+
+        function b(){
+            debugger;
+            console.log("2nd function call");
+            c();
+        }
+        
+        function c(){
+            debugger;
+            console.log("3rd function call");
+        }
+        a();
+</script>
+</body>
+</html>

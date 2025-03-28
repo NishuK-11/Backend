@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(){
+            let a = 5;
+            let b= 10;
+            document.write(`the sum of ${a} and ${b} is ${a+b}`);
+        }
+        add();
+        const funadd = ()=>{
+            let c = 5;
+            let d= 10;
+            document.write(`the sum of ${c} and ${d} is ${c+d}`);
+        }
+        funadd();
+        const fun1add = (e,f)=>{
+            document.write(`the sum of ${e} and ${f} is ${e+f}`);
+        }
+        fun1add(2,5);
+        const fun2add = (g=4,h=6)=>{
+            document.write(`the sum of ${g} and ${h} is ${g+h}`);
+        }
+        fun2add();
+
+    </script>
+</body>
+</html>

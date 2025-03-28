@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let database = [
+            {
+                username: "user1",
+                password: "pass1"
+            }
+        ];
+        let status = [
+            {
+                name:"thapa",
+                status:"needs 50k subscribers"
+            },
+            {
+                name:"nishu",
+                status:"in a way to earn 50k money"
+            }
+        ]
+        const username = prompt("Enter your name:");
+        const password = prompt("Enter your password:");
+        function login(user, pass) {
+                if (user === database[0].username && pass === database[0].password) {
+                    console.log(status);
+                    for(let value of status){
+                        console.log(value);
+                    }
+                }
+                else{
+                    alert('username or password is incorrect');
+                }
+        }
+        login(username, password);
+    </script>
+</body>
+</html>
