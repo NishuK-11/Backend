@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+
+</head>
+<body>
+    <div class="container">
+        <div id="loaddata">this is going to change</div>
+        <button class="btn btn-success" id="btnclick">hii</button>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#btnclick').click(function(){
+                $('#loaddata').load('load.html',function(){
+                    alert("this is done");
+                });
+            })
+        })
+    </script>
+
+ 
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX GET Request Example</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>AJAX Example</h2>
+        <p id="changehere">This line will change when you click the button.</p>
+        <button class="btn btn-primary btnclick">Click Me</button>
+    </div>
+
+    <script type="text/javascript">
+        // $(document).ready(function(){
+        //     console.log("✅ jQuery Loaded");
+
+        //     $('.btnclick').click(function(){
+        //         console.log("🟢 Button clicked!");
+
+        //         $.get('get.html', function(data, status){
+        //             console.log("✅ Data received:", data);
+        //             $('#changehere').html(data);
+        //             alert("Success! Status: " + status);
+        //         }).fail(function(){
+        //             console.error("❌ Error: Failed to load 'get.html'. Make sure the file exists.");
+        //             alert("Failed to fetch data. Check the console for errors.");
+        //         });
+        //     });
+        // });
+
+        $(document).ready(function(){
+            $('.btnclick').click(function(){
+                $.post('post.php',{
+                    name:"nishu",
+                    subs:"subscribe"
+                },function(data,status){
+                    $('#changehere').html(data);
+                    alert()
+                })
+            })
+        })
+    </script>
+
+</body>
+</html>

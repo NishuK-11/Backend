@@ -1,0 +1,124 @@
+<!--  -->
+<!-- what is AJAX?
+AJAX : Asynchronous javascript and XML. 
+ajax is not a programming language
+ajax just uses combination of :
+a browser built-in XMLHttpRequest object(to request data from a web server)
+javascript and HTML DOM (to display or use the data)
+
+ajax allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes. 
+this means that it possible to update parts of a web page , without reloading the whole page . 
+
+browser (event occur, query ,create XML HttpRequest , send) -> internet -> server(process HTTPRequest , create a response and send data back to the browser) -> internet -> broser(process the returned data using js, update page content)
+
+the load() method loads data from a server and puts the returned data into the selected element.  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="buttonClickHandler()">FetchData</button>
+    <script>
+        function buttonClickHandler(){
+            // console.log("you have clicked the fetchBtn");
+            // const xhr = new XMLHttpRequest();
+            
+            // xhr.open('GET','nishu1.txt',true);
+            // xhr.onprogress = function(){
+            //     console.log("on progress");
+            // }
+            // xhr.onreadystatechange = function(){
+            //     console.log("ready state is",xhr.readyState);
+            // }
+            // xhr.onload = function(){
+            //     if(this.status===200){
+            //     console.log(this.responseText);
+            //     }else{
+            //         console.log("data not found");
+            //     }
+            // }
+            // xhr.send();
+            // console.log("focus on your work");
+
+            console.log("you have clicked the fetchBtn");
+            const xhr = new XMLHttpRequest();
+            
+            xhr.open('POST','https://dummy.restapiexample.com/api/v1/create',true);
+
+            xhr.getResponseHeader('content-type','application/json');
+
+            xhr.onprogress = function(){
+                console.log("on progress");
+            }
+            // xhr.onreadystatechange = function(){
+            //     console.log("ready state is",xhr.readyState);
+            // }
+            xhr.onload = function(){
+                if(this.status===200){
+                console.log(this.responseText);
+                }else{
+                    console.log("data not found");
+                }
+            }
+           
+            console.log("focus on your work");
+            params = `{"name":"test","salary":"123","age":"23"}`;
+            xhr.send(params);
+            console.log("we are done!");
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="buttonClickHandler()">FetchData</button>
+    <script>
+        function buttonClickHandler() {
+            console.log("You have clicked the fetchBtn");
+
+            const xhr = new XMLHttpRequest();
+
+            xhr.open('POST', 'https://dummy.restapiexample.com/api/v1/create', true);
+            
+            // Corrected header setting
+            xhr.setRequestHeader('Content-Type', 'application/json');
+
+            xhr.onprogress = function() {
+                console.log("On progress...");
+            };
+
+            xhr.onload = function() {
+                if (this.status === 200 || this.status === 201) {
+                    console.log("Response:", this.responseText);
+                } else {
+                    console.log("Data not found. Status:", this.status);
+                }
+            };
+
+            console.log("Focus on your work");
+
+            const params = JSON.stringify({
+                name: "test",
+                salary: "123",
+                age: "23"
+            });
+
+            xhr.send(params);
+            console.log("We are done!");
+        }
+    </script>
+</body>
+</html>
+
