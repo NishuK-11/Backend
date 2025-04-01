@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let a = 3;
+        let b = 4;
+        a=b;
+        b=b+5;;
+        console.log(a); // 3
+        console.log(b); // 4
+
+
+        //by refernce
+        const obj1 = {
+            username: "nishu",
+            age:13
+        };
+        const obj2 = obj1;
+        obj2.username = "thapa";
+        console.log(obj1); // thapa
+        console.log(obj2);
+
+        let arr1 = [1, 2, 3];
+        let arr2 = arr1; 
+
+        arr2.push(4);
+        console.log(arr1); // Output: [1, 2, 3, 4] (both arr1 and arr2 point to the same array)
+
+
+//         Type	Example	Stored In	Mutable?
+// Primitive	string, number, boolean, null, undefined, symbol, bigint	Stack	❌ No
+// Reference	object, array, function, Date, RegExp, Map, Set	Heap	✅ Yes
+
+        let likes = 100;
+        const youtube ={
+            name:"thapa",
+            subscribers:4567
+        }
+        const thapa = (a,b)=>{
+            // 100 (primitive type, passed by value)
+            a = 200;
+            console.log(a); // 200 (primitive type, passed by value)
+            b.subscribers = 1000;
+        }
+        thapa(likes,youtube);
+        console.log(likes); // 100 (primitive type, passed by value)
+        console.log(youtube.subscribers); // 1000 (reference type, passed by reference)
+
+    </script>
+</body>
+</html>

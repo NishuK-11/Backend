@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- execution stack also known as call stack is a stack with LIFO structure, which is used to store all the execution context created during the code execution.  <br>
+     -->
+    
+    <!-- <script>
+        var a = 10;
+        console.log(a); // 10
+        b=20;
+        console.log(b); // undefined
+        var b ; // hoisting
+    </script> -->
+
+    <script>
+        console.log("I am a "+job);
+        var job = "developer"; // hoisting
+        console.log("I am a "+job);
+        function whoAmI(){
+            console.log("I am a "+job);
+            var job = "designer"; // hoisting
+            console.log("I am a "+job);
+        }
+        whoAmI(); // undefined
+    </script>
+</body>
+</html>

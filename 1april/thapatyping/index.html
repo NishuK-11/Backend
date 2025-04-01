@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;margin: 0;box-sizing: border-box;
+        }
+        .mainDiv{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: #3498db;
+        }
+        .centerDiv{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+
+        }
+        h1{
+            text-transform: capitalize;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ecf0f1;
+            text-shadow: 1px 2px 3px #2980b9;
+            font-size: 2.1rem;
+        }
+        h2{text-align: center;}
+        textarea{
+            background-color: #444;
+            box-shadow: 0 0 1px rgba(0,0,0,0.2);
+            border-radius: 10px 10px 0 0;
+            border: 20px solid #34495e;
+            color: white;
+            font-size: 1.3 rem;
+        }
+        .mainbtn{
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 5px solid #2980b9;
+            background: #ecf0f1;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="mainDiv">
+
+        <div class="centerDiv">
+            <h1>Welcome to Typing Speed Test</h1>
+            <h2 id="msg"></h2>
+            <textarea name="" id="mywords" cols="100" rows="10" placeholder="Remember, be nice!"></textarea>
+            <button id="btn" class="mainbtn">Start</button>
+        </div>
+    </div>
+    <script>
+        const setOfWords =["be brave, put your words without any hesitation and win in any situation.",
+        "the beauty is when you win in your most difficult times with patience and bravery. "
+        , "sometime people leaves you not because they hate you but because they fear that they will start loving you, people fear love."];
+        const msg = document.getElementById("msg");
+        const typeWords = document.getElementById("mywords");
+        const btn = document.getElementById("btn");
+        let startTime, endTime;
+
+        playGame = () => {
+            let randomNumber = Math.floor(Math.random() * setOfWords.length);
+            msg.innerText = setOfWords[randomNumber];
+            let date = new Date();
+            startTime = date.getTime();
+            btn.innerText = "Done";
+        }
+
+        const endplay = ()=>{
+            let date = new Date();
+            endTime = date.getTime();
+            let totalTime = (endTime - startTime)/1000;
+            let totalStr = typeWords.value;
+            let wordCount = wordCounter(totalStr);
+            let speed = Math.round((wordCount / totalTime) * 60);
+            let finalMsg = "you typed total at "+speed+"words per minute"
+           finalMsg += comparedWords(msg.innerText, totalStr);
+            msg.innerText = finalMsg;
+        }
+
+        const comparedWords = (str1,str2)=>{
+            let word1 = str1.split(" ");
+            let word2 = str2.split(" ");
+            let count = 0;
+            word1.forEach(function(item,index){
+                if(item == word2[index]){
+                    count++;
+                }
+            })
+           let errorWords = (word1.length - count);
+            return(cnt + " correct out of "+ word1.length + " words. You made "+errorWords+" errors.");
+        }
+        const wordCounter = (str) => {
+            let response = str.split(" ").length;
+            return response;
+        }
+        btn.addEventListener('click',function(){
+            if(this.innerText === "Start"){
+                typeWords.disabled = false;
+                playGame();
+                typeWords.value = "";
+                typeWords.focus();
+                let randomNumber = Math.floor(Math.random() * setOfWords.length);
+                msg.innerText = setOfWords[randomNumber];
+                btn.innerText = "Done";
+                startTime = new Date().getTime();
+            }else if(this.innerText === "Done"){
+                typeWords.disabled = true;
+                btn.innerText = "Start";
+                endTime = new Date().getTime();
+                let totalTime = (endTime - startTime)/1000;
+                let totalStr = typeWords.value;
+                let wordCount = wordCounter(totalStr);
+                let speed = Math.round((wordCount / totalTime) * 60);
+                let finalMsg = "You typed total of "+wordCount+" words in "+totalTime+" seconds. Your typing speed is "+speed+" words per minute.";
+                msg.innerText = finalMsg;
+            }
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .mainDiv {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .centerDiv {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-transform: capitalize;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 2rem;
+        }
+        h2 {
+            text-align: center;
+            color: #16a085;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #34495e;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+        .mainbtn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            background: #2980b9;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .mainbtn:hover {
+            background: #1b5a86;
+        }
+        #result {
+            font-size: 1.2rem;
+            color: #e74c3c;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="mainDiv">
+        <h1>Typing Speed Test</h1>
+        <div class="centerDiv">
+            <h2 id="msg">Click 'Start' to begin typing</h2>
+            <textarea id="mywords" placeholder="Type here..."></textarea>
+            <button id="btn" class="mainbtn">Start</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script>
+        const setOfWords = [
+            "Be brave, put your words without any hesitation and win in any situation.",
+            "The beauty is when you win in your most difficult times with patience and bravery.",
+            "Sometimes people leave you not because they hate you but because they fear they will start loving you. People fear love."
+        ];
+
+        const msg = document.getElementById("msg");
+        const typeWords = document.getElementById("mywords");
+        const btn = document.getElementById("btn");
+        const result = document.getElementById("result");
+
+        let startTime, endTime;
+
+        // Start Game Function
+        function playGame() {
+            let randomIndex = Math.floor(Math.random() * setOfWords.length);
+            msg.innerText = setOfWords[randomIndex];
+
+            startTime = new Date().getTime();
+            btn.innerText = "Done";
+            typeWords.disabled = false;
+            typeWords.value = "";
+            typeWords.focus();
+            result.innerText = "";
+        }
+
+        // End Game Function
+        function endPlay() {
+            endTime = new Date().getTime();
+            let totalTime = (endTime - startTime) / 1000; // Convert to seconds
+
+            let typedText = typeWords.value.trim();
+            let wordCount = wordCounter(typedText);
+            let speed = Math.round((wordCount / totalTime) * 60);
+
+            let accuracyReport = compareWords(msg.innerText, typedText);
+
+            let finalMessage = `You typed ${wordCount} words in ${totalTime.toFixed(2)} seconds. 
+                                Your typing speed is ${speed} words per minute.`;
+            finalMessage += accuracyReport;
+
+            result.innerHTML = finalMessage;
+            btn.innerText = "Start";
+            typeWords.disabled = true;
+        }
+
+        // Compare Words Function
+        function compareWords(original, typed) {
+            let originalWords = original.trim().split(" ");
+            let typedWords = typed.trim().split(" ");
+            let correctCount = 0;
+
+            originalWords.forEach((word, index) => {
+                if (word === typedWords[index]) {
+                    correctCount++;
+                }
+            });
+
+            let incorrectCount = originalWords.length - correctCount;
+            return `<br>${correctCount} correct out of ${originalWords.length} words. 
+                    You made ${incorrectCount} mistakes.`;
+        }
+
+        // Word Counter Function
+        function wordCounter(str) {
+            return str.split(/\s+/).filter(word => word.length > 0).length;
+        }
+
+        // Event Listener for Button Click
+        btn.addEventListener('click', function () {
+            if (this.innerText === "Start") {
+                playGame();
+            } else if (this.innerText === "Done") {
+                endPlay();
+            }
+        });
+    </script>
+
+</body>
+</html> -->

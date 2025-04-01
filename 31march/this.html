@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- the js this keyword refers to the object it belongs to.  this is a special keyword in javascript
+    it has different values depending on where it is used.  this is a reference to the object that is executing the current function.
+
+     -->
+    <script>
+        // console.log(this); // window object in browser
+        //Alone, this refers to the global object (window in browsers)
+        // In a function, this refers to the global object (window in browsers)
+        // In a method, this refers to the owner object (the object that is calling the method)
+        // In an event, this refers to the element that triggered the event
+        // In a constructor, this refers to the newly created object
+        // In strict mode, this is undefined in functions and methods that are not called as methods of an object
+        // In arrow functions, this is lexically bound to the enclosing scope
+        // In a class, this refers to the instance of the class
+        // In a class method, this refers to the instance of the class
+
+
+        // function showThis() {
+        //     console.log(this); // window object in browser
+        // }
+        // showThis();
+
+
+        const thapa = {
+            name:"thapa",
+            age: 22,
+            sum:function(){
+                var add = 2+2;
+                console.log(add); // 4
+                console.log(this); // thapa object
+                console.log(this.name); // thapa
+                console.log(this.age); // 22
+                //function ke andar method ke andar function becomes regular function aur unke liye this :- document wala hi hoga 
+                function child(){
+                    var name = "nishu";
+                    console.log("child name is "+name); // child name is nishu
+                    console.log(this); // window object in browser
+                }
+                child();
+            }
+        }
+        thapa.sum();
+
+
+//         Feature	Function	Method
+// Definition	A block of reusable code that performs a task	A function that is a property of an object
+// How It's Called	Called independently	Called using an object
+// Example	function greet() { console.log("Hello!"); }	let person = { sayHi: function() { console.log("Hi!"); } };
+// Invocation	greet();	person.sayHi();
+// Context (this)	this refers to global/window (or undefined in strict mode)	this refers to the object calling the method
+
+// Example of a Function
+// function add(a, b) {
+//     return a + b;
+// }
+// console.log(add(5, 3)); // 8
+
+
+// Example of a Method
+// let calculator = {
+//     multiply: function(a, b) {
+//         return a * b;
+//     }
+// };
+// console.log(calculator.multiply(4, 5)); // 20
+    </script>
+</body>
+</html>
