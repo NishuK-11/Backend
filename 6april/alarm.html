@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Countdown Timer</title>
+</head>
+<body>
+    <h2>Countdown Timer</h2>
+    <div id="display" style="font-size: 2rem;">10</div>
+    <button id="start">Start</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        let timeLeft = 10; // Countdown start time (in seconds)
+        let timerId; // To store interval ID
+
+        const display = document.getElementById("display");
+        const startBtn = document.getElementById("start");
+        const resetBtn = document.getElementById("reset");
+
+        startBtn.addEventListener("click", () => {
+            // Prevent multiple intervals
+            if (timerId) return;
+
+            timerId = setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    display.textContent = timeLeft;
+                } else {
+                    clearInterval(timerId);
+                    timerId = null;
+                    alert("Time's up!");
+                }
+            }, 1000); // Run every 1 second
+        });
+
+        resetBtn.addEventListener("click", () => {
+            clearInterval(timerId); // Stop the interval
+            timerId = null;
+            timeLeft = 10;
+            display.textContent = timeLeft;
+        });
+    </script>
+</body>
+</html> -->
+<body>
+    <div id="display">10</div>
+    <button id="start">Start</button>
+    <button id="reset">Reset</button>
+  
+    <script type="text/javascript">
+      let timeleft = 10;
+      let timerId = null;
+  
+      const display = document.getElementById('display');
+      const startbtn = document.getElementById('start');
+      const resetbtn = document.getElementById('reset');
+  
+      startbtn.addEventListener('click', () => {
+        if (timerId !== null) return; // Prevent multiple intervals
+//         timerId = ...
+// timerId is a variable that stores the ID of the interval.
+
+// This ID is used so you can stop it later using clearInterval(timerId).
+        timerId = setInterval(() => {
+          if (timeleft > 0) {
+            timeleft--;
+            display.innerHTML = timeleft;
+          } else {
+            clearInterval(timerId);
+            timerId = null;
+            alert("Time's up!");
+          }
+        }, 1000);
+      });
+  
+      resetbtn.addEventListener('click', () => {
+        clearInterval(timerId);
+        timerId = null;
+        timeleft = 10;
+        display.innerHTML = timeleft;
+      });
+
+    </script>
+  </body>
+  
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- in programming laguage " an object is an instance of class". this means that using class, i can create many objects and the all share method and properties.
+    since objects can be enhanced, there are many ways to create objects sharing methods and properties. 
+    
+    -->
+    <script>
+        class Students{
+            constructor(name,age,std){
+                this.name = name;
+                this.age = age;
+                this.class = std;      
+            }
+
+            //instance method
+            biodata(){
+                console.log(`Hi i am a class method, my name if ${this.name} and i read in class ${this.class}`);
+            }
+        }
+        class Players extends Students{
+            constructor(name,age,std,game){
+            super(name,age,std);
+             this.mygame = game;
+            }
+            
+            play_biodata(){
+                return `${super.biodata()} and i play ${this.mygame}`;
+            }
+        }
+    
+        // let obj1 = new Students();
+        let obj1 = new Players("John", 20, "BCA",'football');
+        // let obj2 = new Stusents("piyush",23,"B.tech");
+        console.log(obj1.play_biodata());
+        // obj1.biodata();
+        // obj2.biodata();
+    </script>
+</body>
+</html>

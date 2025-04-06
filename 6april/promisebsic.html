@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     const myPromise = new Promise((resolve, reject) => {
+    //     let success = true;
+    
+    //     if (success) {
+    //         resolve("I got the job!"); // task successful
+    //     } else {
+    //         reject("I failed the interview."); // task failed
+    //     }
+    // });
+    // myPromise
+    // .then((message) => {
+    //     console.log("Success:", message);
+    // })
+    // .catch((error) => {
+    //     console.log("Error:", error);
+    // })
+    // .finally(() => {
+    //     console.log("Always runs, no matter what.");
+    // });
+
+    const delayedPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Here’s your data after 2 seconds!");
+    }, 2000);
+});
+
+delayedPromise
+    .then((data) => {
+        console.log(data); // Runs after 2 seconds
+    });
+
+    </script>
+
+</body>
+</html>

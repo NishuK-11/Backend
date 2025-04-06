@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">click me</button>
+    <script type="text/javascript">
+        // const fun2c = ()=>{
+        //     setTimeout(()=>{
+        //         console.log("func2 is starting");
+        //     }, 2000);
+        // }
+        // const func1 = () =>{
+        //     console.log("func1 is starting");
+        //     func2();
+        //     console.log('func1 is ending');
+        // }
+        // func1();
+
+        // const wait = () =>{
+        //     console.log("js part is starting");
+        //     let start = new Date().getTime();
+        //     console.log(new Date().getTime() - start);
+        //     while(new Date().getTime() - start < 2000){
+        //         console.log("waiting for 2 sec");
+        //     }
+        // }
+        // const btn = document.getElementById('btn');
+        // btn.addEventListener('click', wait);
+
+        const wait = () => {
+        console.log("JS part is starting");
+        let count = 0;
+
+        const interval = setInterval(() => {
+            console.log("waiting for 2 sec");
+            count++;
+            if (count === 3) { // runs 3 times = ~6 seconds
+                clearInterval(interval);
+                console.log("Done waiting");
+            }
+        }, 5000); // 2 seconds delay between logs
+    }
+
+    const btn = document.getElementById('btn');
+    btn.addEventListener('click', wait);
+
+
+    //setInterval is used to run a function after a certain interval of time. it will run the function after every interval of time.
+    let count = 0;
+let intervalId = setInterval(() => {
+    console.log("Hello!");
+    count++;
+    if (count === 5) {
+        clearInterval(intervalId);
+    }
+}, 1000);
+
+//clearInterval() stops the function that’s running on a timer from setInterval().
+    </script>
+</body>
+</html>
